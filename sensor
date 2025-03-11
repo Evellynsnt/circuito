@@ -1,0 +1,20 @@
+// C++ code2
+// Evellyn 
+
+int led =2;
+int portaSensor= A0;
+int valorSensor = 0;
+
+void setup(){
+    pinMode (led, OUTPUT);
+}
+
+void loop(){
+ 	valorSensor = analogRead(portaSensor);
+  	Serial.print("Valor do sensor:");
+  	Serial.println(valorSensor);
+  
+    
+  	delay(100); // Delay a litte bit to improve simulation
+  	
+}
