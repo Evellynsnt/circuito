@@ -7,14 +7,20 @@ int valorSensor = 0;
 
 void setup(){
     pinMode (led, OUTPUT);
+  	Serial.begin (9600);
 }
 
 void loop(){
- 	valorSensor = analogRead(portaSensor);
-  	Serial.print("Valor do sensor:");
+ 	  valorSensor = analogRead(portaSensor);
+  	Serial.println("Valor do sensor:");
   	Serial.println(valorSensor);
   
-    
-  	delay(100); // Delay a litte bit to improve simulation
+  if(valorSensor > 100){
+	digitalWrite(led, HIGH);
+  }else{
+    digitalWrite(led, LOW);
+  }
+  
+  delay(100);
   	
 }
