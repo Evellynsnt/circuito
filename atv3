@@ -1,0 +1,40 @@
+// C++ code
+// atv3
+
+int ledVerde = 2;
+int ledAmarela = 3;
+int ledVermelha = 4;
+int portaSensor = 0;
+int valorSensor = 0;
+
+void setup(){
+	pinMode (ledVerde, OUTPUT);
+  	pinMode(ledAmarela, OUTPUT);
+  	pinMode(ledVermelha, OUTPUT);
+  	Serial.begin(9600);
+  
+}
+
+void loop(){
+    valorSensor = analogRead (portaSensor);
+    Serial.println(valorSensor);
+  
+    if (valorSensor > 500){
+      digitalWrite(ledVerde, HIGH);
+    }
+    if(valorSensor > 500){
+      digitalWrite (ledAmarela,HIGH);
+    }
+    if(valorSensor > 500) {
+      digitalWrite(ledVermelha, HIGH);
+    } 
+
+    else{
+        digitalWrite(ledVerde, LOW);
+		digitalWrite(ledAmarela, LOW);
+      	digitalWrite(ledVermelha, LOW);
+      }
+
+    
+    delay(100); 
+}
